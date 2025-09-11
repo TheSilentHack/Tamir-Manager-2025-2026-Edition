@@ -28,8 +28,18 @@
       <p id="windowWidth"></p>
     </main>
     <script>
-      getElementById("windowHeight").innerHTML = "Hauteur : " + window.innerHeight;
-      getElementById("windowWidth").innerHTML = "Hauteur : " + window.innerWidth;
+      function updateSize() {
+        document.getElementById("windowHeight").innerHTML =
+          "Hauteur : " + window.innerHeight;
+        document.getElementById("windowWidth").innerHTML =
+          "Largeur : " + window.innerWidth;
+      }
+    
+      // Exécuter au chargement
+      updateSize();
+    
+      // Exécuter à chaque redimensionnement
+      window.onresize = updateSize;
     </script>
   </body>
 </html>
